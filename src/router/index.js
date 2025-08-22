@@ -5,11 +5,11 @@ import SignUpView from '@/views/SignUpView.vue'
 import TodoListView from '@/views/TodoListView.vue'
 
 const routes = [
-  { path: '/', component: LoginView },
-  { path: '/signup', component: SignUpView },
-  { path: '/todolist', component: TodoListView, meta: { requiresAuth: true } },
+  { path: '/', redirect: '/login' },
+  { path: '/login', name: 'Login', component: LoginView },
+  { path: '/signup', name: 'Signup', component: SignUpView },
+  { path: '/todolist', name: 'TodoList', component: TodoListView, meta: { requiresAuth: true } },
 ]
-
 const router = createRouter({
   history: createWebHistory(),
   routes,

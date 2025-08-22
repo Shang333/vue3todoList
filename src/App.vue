@@ -6,11 +6,11 @@ import './assets/style/base.css'
 
 <template>
   <header>
-    <nav>
+    <!-- <nav>
       <RouterLink to="/">Login</RouterLink> |
       <RouterLink to="/signup">SignUp</RouterLink> |
       <RouterLink to="/todolist">TodoList</RouterLink>
-    </nav>
+    </nav> -->
   </header>
    <RouterView />
 </template>
