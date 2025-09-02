@@ -23,7 +23,13 @@
                 <li><a href="#" :class="{ active: activeTab === 'completed' }" @click.prevent="activeTab = 'completed'">已完成</a></li>
                 </ul>
                 <div class="todoList_items">
-                    <ul class="todoList_item">
+                    <!-- ★ 新增：空清單提示（避免載入中或錯誤時誤顯示） -->
+                  <p
+                    v-if="hasNoTodos"  
+                    class="todoList_empty"
+                    style="margin:16px 0; color:#666;"
+                  >目前尚無待辦事項</p>
+                    <ul class="todoList_item" v-else>
                         <li v-for="todo in filteredTodos" :key="todo.id">
                             <label class="todoList_label">
                             <input
@@ -197,6 +203,14 @@ onMounted(async () => {
   if (!tk) { await router.replace({ name: 'Login' }); return }
   await fetchTodos()
 })
+
+// ★ 新增：空清單判斷（避免載入中或錯誤時誤顯示）
+const hasNoTodos = computed(() =>
+  !loading.value &&
+  !errMsg.value &&
+  filteredTodos.value.length === 0
+)
+
 </script>
 
 
