@@ -408,6 +408,8 @@ nav ul a span {
   top: 4px;
   right: 4px;
   padding: 10px;
+  margin-top:auto !important;
+  margin-bottom:auto !important;
 }
 
 .todoList_list {

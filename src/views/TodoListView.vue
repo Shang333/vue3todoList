@@ -13,7 +13,7 @@
             <div class="inputBox">
                 <input type="text" placeholder="請輸入待辦事項" v-model="newTodo" @keyup.enter="addTodo">
                 <a href="#">
-                <i class="fa fa-plus"></i>
+                <img src="/addIcon.svg"></img>
                 </a>
             </div>
             <div class="todoList_list">
