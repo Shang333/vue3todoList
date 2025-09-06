@@ -11,7 +11,7 @@ const routes = [
   { path: '/todolist', name: 'TodoList', component: TodoListView, meta: { requiresAuth: true } },
 ]
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
 
