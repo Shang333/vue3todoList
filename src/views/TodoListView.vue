@@ -11,8 +11,8 @@
         <div class="container todoListPage vhContainer">
             <div class="todoList_Content">
             <div class="inputBox">
-                <input type="text" placeholder="請輸入待辦事項" v-model="newTodo" @keyup.enter="addTodo">
-                <a href="#">
+                <input type="text" placeholder="請輸入待辦事項" v-model="newTodo"  @keyup.enter="addTodo">
+                <a href="#" @click="addTodo">
                 <img src="/addIcon.svg"></img>
                 </a>
             </div>
@@ -43,7 +43,7 @@
                             </span>
                             </label>
                             <a href="#" @click.prevent="removeTodo(todo.id)">
-                            <i class="fa fa-times"></i>
+                            <img src="/closeIcon.svg"></img>
                             </a>
                         </li>
                     </ul>
